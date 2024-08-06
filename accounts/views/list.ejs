@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="/account/create">新增帳單</a>
+    </div>
+    <form method="post" action="/logout"> 
+        <div>
+          <button>登出</button>
+        </div>
+    </form>
+
+    <div>
+        <hr>
+        <% accounts.forEach(item => { %>
+        <div>time: <%= item.time%></div>
+        <div>title: <%= item.title%></div>
+        <div>money: <%= item.account%></div>
+        <div>type: <%= item.type===1? '收入':'支出' %></div>
+        <a class="delBtn" href="/account/<%= item.id%>">刪除 </a>
+        
+        <hr>
+    </div>
+    <%  }) %>
+</body>
+<script>
+    let delBtn=document.querySelectorAll('.delBtn')
+    delBtn.forEach(item=>{
+        item.addEventListener('click',function(){
+            if(confirm('are you sure?')){
+                return true
+            }
+            else{
+                event.preventDefault()
+            }
+        })
+    })
+</script>
+</html>

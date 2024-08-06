@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/account">
+    <label for="item">事項</label>
+    <input name="title" type="text" id="time">
+    <br>
+    <label for="item">時間</label>
+    <input name="time" type="date" id="time">
+    <br>
+    <label for="item">類型</label>
+    <select name="type" id="type">
+        <option value="-1">支出</option>
+        <option value="1">收入</option>
+    </select>
+    <br>
+    <label for="account">金額</label>
+    <input name="account" type="text" id="account">
+    <br>
+    <label for="remarks">備註</label>
+    <textarea name="remarks" id="remark"></textarea>
+    <button type="submit">新增</button>
+    </form>
+</body>
+</html>
